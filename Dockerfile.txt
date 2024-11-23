@@ -1,0 +1,13 @@
+# Використовуємо Python образ
+FROM python:3.9-slim
+
+# Встановлюємо залежності
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
+
+# Копіюємо код
+COPY . /app/
+
+# Вказуємо команду запуску додатку
+CMD ["python", "db.py"]
